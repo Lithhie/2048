@@ -57,7 +57,7 @@ GameManager.prototype.setup = function () {
     this.score       = 0;
     this.over        = false;
     this.won         = false;
-    this.keepPlaying = true;
+    this.keepPlaying = false;
 
     // Add the initial tiles
     this.addStartTiles();
@@ -77,7 +77,7 @@ GameManager.prototype.addStartTiles = function () {
 // Adds a tile in a random position
 GameManager.prototype.addRandomTile = function () {
   if (this.grid.cellsAvailable()) {
-    var value = Math.random() < 0.9 ? 512 : 1024;
+    var value = Math.random() < 0.9 ? 2 : 4;
     var tile = new Tile(this.grid.randomAvailableCell(), value);
 
     this.grid.insertTile(tile);
